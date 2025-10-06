@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executives</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero {
+  position: relative;
+  background: url('https://picsum.photos/1920/600?random=1') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+    .team-member img {
+  width: 150px;       /* same width for all */
+  height: 150px;      /* same height for all */
+  object-fit: cover;  /* crops excess parts, keeps proportion */
+  border-radius: 50%; /* ensures perfect circle */
+}
+/* make navbar transparent by default */
+.navbar {
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+/* navbar when scrolled */
+.navbar.scrolled {
+  background: rgba(34,81,45,0.95) !important; /* solid green on scroll */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+/* ensure nav links stay white over transparent/colored navbar */
+.navbar .nav-link { color: #fff !important; }
+.navbar .navbar-brand img { filter: none; } /* adjust if you need to invert logo */
+
+ .navbar-dark .nav-link:hover {
+  color: #f8d24f !important; /* golden hover color */
+}
+
+
+    .hero h1 { margin-bottom: 0.5rem; }
+    .team-member img { max-width: 150px; margin-bottom: 1rem; }
+    .timeline { border-left: 4px solid #0d6efd; margin-left: 2rem; padding-left: 2rem; }
+    .timeline .event { margin-bottom: 2rem; }
+    .timeline .event h5 { margin-bottom: 0.25rem; }
+    .cta-btn { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+    <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo1.png" alt="Logo" height="40"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
+        <li class="nav-item"><a class="nav-link" href="Event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- <div class="container"> -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+  <div class="container">
+    <h1>Meet Our Executives</h1>
+    <p class="lead">Dedicated leaders working together to serve, inspire, and empower students.</p>
+  </div>
+</section>
+
+
+
+
+
+
+    
+
+    <!-- History / Timeline -->
+    <!-- <section id="history" class="pt-5">
+      <h2 class="text-center mb-4">Our Journey/ Achievements</h2>
+      <div class="timeline">
+        <div class="event">
+          <h5>2000 – Founded</h5>
+          <p>Our association began with a vision to unite students across departments...</p>
+        </div>
+        <div class="event">
+          <h5>2010 – First Major Event</h5>
+          <p>Held our inaugural cultural festival that brought students together...</p>
+        </div>
+        <div class="event">
+          <h5>2025 – Expanding Horizons</h5>
+          <p>Now, we support over 10 student-led committees and hundreds of members...</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Mission & Vision
+    <section id="mission" class="pt-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Mission</h2>
+          <p>To represent, support, and empower the student community through inclusive leadership and opportunities for growth.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Vision</h2>
+          <p>To cultivate a thriving, collaborative, and impactful student organization that shapes leaders of tomorrow.</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Team Members / Bios -->
+    <section id="team" class="pt-5">
+      <h2 class="text-center mb-4">Executives</h2>
+      <div class="row text-center">
+          <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="Jimoh.JPG" class="rounded-circle" alt="President">
+          <h5>Mls Jimoh Hammed Babatunde</h5>
+          <p>2nd Nimelssa Southwest Regional President</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="presido.jpg" class="rounded-circle" alt="President">
+          <h5>Rt. Hon. Olorunniyi Pelumi Olaoluwa</h5>
+          <p>President</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="vicepre.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Folorunso Habeeb</h5>
+          <p>Vice President 1</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="VP2.jpg" class="rounded-circle" alt="Treasurer">
+          <h5>Hon. Ayesa Grace Ayomide</h5>
+          <p>Vice President 2 </p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="GS.JPG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ogunniyi Akindele Isaac</h5>
+          <p>General Secretary</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="AGS.JPG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Wycliff Chimda Hope</h5>
+          <p>Assistant General secretary</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="FIN.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ayodele Emmanuel Ayooluwa</h5>
+          <p>Financial Secretary</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PRO1.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Olatunbosun Olusola</h5>
+          <p>Public relation officer 1</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PRO2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ibraheem Maryam</h5>
+          <p>Public relation officer 2</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="HEALTH.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Oladeji Emmanuel Oluwafikayo</h5>
+          <p>Director of Health advocacy</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="WELFARE.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Nureni Yusuff Mariam</h5>
+          <p>Welfare Director</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PROGRAM.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ahmad El-Mubeen Mas'ud</h5>
+          <p>Programme Coordinator 1</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PROGRAM2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Peterjegede Nancy</h5>
+          <p>Programme Coordinator 2</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="SPORT.JPG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Odunsanya Enoch Oluwapelumi</h5>
+          <p>Sport Director</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PA.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Olaosebikan Amirat Ayomide</h5>
+          <p>Personal Assistant to the President</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="PRESS.jpeg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Adeyemo Isaac O</h5>
+          <p>Director of Press</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="LOGISTIC.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ogundipe Ifeoluwa</h5>
+          <p>Director of Logistic</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="GRAPHIC.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Abolaji Emmanuel O.</h5>
+          <p>Director of Graphics</p>
+        </div>
+  <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="CHIEF.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Aanuoluwapo Bukunmi Emmanuel</h5>
+          <p>Chief Whip</p>
+        </div>
+          <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="sa.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Awoyemi Daniel Ishola</h5>
+          <p>Special Assistant on Special Duties to the president</p>
+        </div>
+         <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="stra.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Olaboye Favor</h5>
+          <p>Director of Strategic Planning</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <!-- <section id="cta" class="text-center pt-5">
+      <p class="lead">Want to get to know us more? Check our events or join as a member!</p>
+      <a href="events.html" class="btn btn-primary btn-lg cta-btn">View Events</a>
+      <a href="join.html" class="btn btn-success btn-lg cta-btn">Join Us</a>
+    </section> -->
+  </div>
+<!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: rgba(34,81,45,255);">
+    <p>&copy; 2025 Student Association. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3">
+  <a href="https://web.facebook.com/profile.php?id=61561918256194"><i class="bi bi-facebook text-white"></i></a>
+  <a href="https://x.com/NimelssaR17193"><i class="bi bi-twitter text-white"></i></a>
+    <a href="https://www.tiktok.com/@nimelssasouthwest"><i class="bi bi-tiktok text-white"></i></a>
+  <a href="https://www.instagram.com/nimelssa.southwest?igsh=bmtydGVjeXIxbTZi"><i class="bi bi-instagram text-white"></i></a>
+</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+        window.addEventListener("scroll", function () {
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+  (function () {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+
+    // run once on load and then on scroll
+    document.addEventListener('DOMContentLoaded', onScroll);
+    window.addEventListener('scroll', onScroll);
+  })();
+
+  </script>
+</body>
+</html>

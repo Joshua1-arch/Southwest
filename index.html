@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NIMELSSA SOUTHWEST</title>
+
+  <!-- animation on scroll -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
+      /* color: #FFD700; */
+      /* background-color: #FFD700; */
+    }
+    section {
+      padding: 60px 0;
+    }
+/* make navbar transparent by default */
+.navbar {
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+/* navbar when scrolled */
+.navbar.scrolled {
+  background: rgba(34,81,45,0.95) !important; /* solid green on scroll */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+/* ensure nav links stay white over transparent/colored navbar */
+.navbar .nav-link { color: #fff !important; }
+.navbar .navbar-brand img { filter: none; } /* adjust if you need to invert logo */
+
+    .hero {
+  position: relative;
+  background: url('https://picsum.photos/1920/600?random=1') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.hero h1 {
+  position: relative;
+  font-size: 3.5rem;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .btn{
+        background-color: rgba(34,81,45,255);
+    }
+    .gallery img:nth-child(-n+6) {
+  width: 2048px;
+  height: 1638px;
+  object-fit: cover; /* keeps aspect ratio, crops if needed */
+}
+.navbar.scrolled {
+  background: #22512d !important;
+  transition: background 0.3s;
+}
+ .navbar-dark .nav-link:hover {
+  color: #f8d24f !important; /* golden hover color */
+}
+    .timeline { border-left: 4px solid #0d6efd; margin-left: 2rem; padding-left: 2rem; }
+    .timeline .event { margin-bottom: 2rem; }
+    .timeline .event h5 { margin-bottom: 0.25rem; }
+  .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+       .team-member img { max-width: 150px; margin-bottom: 1rem; }
+
+#resources a {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,81,45,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(34,81,45,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,81,45,0); }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo1.png" alt="Logo" height="40"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
+        <li class="nav-item"><a class="nav-link" href="Event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Hero / Home -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Welcome to the NIMELSSA SOUTHWEST</h1>
+    <!-- <a href="#join" class="btn btn-light btn-lg mt-3">Join Us</a> -->
+  </div>
+</section>
+
+<!-- About Us -->
+<!-- 
+<!-- Events -->
+<!-- <section id="events" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Events</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+
+          <div class="card-body">
+            <h5 class="card-title">Ogbomos '25 NIMELSSA SOUTHWEST CONVENTION</h5>
+            <p>Date: Sept 25, 2025</p>
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Sports Festival</h5>
+            <p>Date: Oct 10, 2025</p>
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="events" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div class="row justify-content-center">
+        
+        <!-- Event 1 -->
+        <div class="col-md-5 mb-4">
+          <div class="card shadow-sm text-center">
+            <img src="event2.jpg" 
+                 class="mx-auto d-block mt-3 rounded" 
+                 alt="Ogbomos '25 Convention" 
+                 style="max-width: 90%; height: auto;">
+            <div class="card-body">
+              <h5 class="card-title">Ogbomos '25 NIMELSSA Southwest Convention</h5>
+              <p class="mb-2">Date: Sept 25, 2025</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScLCJdC8a-HjvtPdqZIPT_-MYqmRfsb5wiS9mNxQjXDqdpaxw/viewform?usp=send_form" class="btn btn-primary">Register</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Event 2 -->
+        <div class="col-md-5 mb-4">
+          <div class="card shadow-sm text-center">
+            <img src="event2.jpg" 
+                 class="mx-auto d-block mt-3 rounded" 
+                 alt="Sports Festival" 
+                 style="max-width: 90%; height: auto;">
+            <div class="card-body">
+              <h5 class="card-title">Sports Festival</h5>
+              <p class="mb-2">Date: Oct 10, 2025</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScLCJdC8a-HjvtPdqZIPT_-MYqmRfsb5wiS9mNxQjXDqdpaxw/viewform?usp=send_form" class="btn btn-primary">Register</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+<!-- News -->
+<section id="news" class="py-5" style="background-color: #F8F9F5;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: rgba(34,81,45,255);">News & Updates</h2>
+    <div class="row">
+      
+      <!-- Blog Post 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <img src="image1 (15).jpg" class="card-img-top" alt="News 1">
+          <div class="card-body">
+            <h5 class="card-title">THE SOUTHWEST SENTINEL</h5>
+            <p class="text-muted"><small>Published: August 6, 2025</small></p>
+            <p class="card-text">
+              NIMELSSA SW LEADERS PAYS COURTESY VISIT TO REDEEMER'S UNIVERSITY...
+            </p>
+            <a href="news-details.html" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <img src="image1 (55).jpg" class="card-img-top" alt="News 2">
+          <div class="card-body">
+            <h5 class="card-title">THE SOUTHWEST SENTINEL</h5>
+            <p class="text-muted"><small>Published: July 8, 2025</small></p>
+            <p class="card-text">
+              HOD MLS BOWEN COMMENDS NIMELSSASOUTHWEST INITIATIVES...
+            </p>
+            <a href="news-details.html" class="btn ">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-5" style="background-color: #f8f9f5;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: rgba(34,81,45,255); font-weight: bold;">
+      Presidential Speech
+    </h2>
+
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img src="presido.jpg" 
+             alt="President" 
+             class="img-fluid rounded-circle shadow-sm" 
+             style="max-width: 220px; border: 5px solid rgba(34,81,45,255);">
+        <h5 class="mt-3 mb-0" style="color: rgba(34,81,45,255);">
+          Rt. Hon. Olorunniyi Pelumi Olaoluwa
+        </h5>
+        <p class="text-muted mb-0">Regional President</p>
+        <p class="text-muted">NIMELSSA Southwest Region</p>
+      </div>
+
+      <!-- Speech Section -->
+      <div class="col-md-7">
+        <p style="text-align: justify; font-size: 1.05rem; line-height: 1.8;">
+          Dear Comrades and Visitors, it is a great honour to welcome you to the official website of the 
+          <strong>Nigerian Medical Laboratory Science Students’ Association, Southwest Region</strong>.
+          This platform reflects our shared commitment to unity, innovation, and excellence among Medical 
+          Laboratory Science students.
+        </p>
+
+        <p style="text-align: justify; font-size: 1.05rem; line-height: 1.8;">
+          At NIMELSSA Southwest, we are building a strong community that empowers students, bridges the gap 
+          between learning and practice, and amplifies our relevance in the healthcare system. Our focus remains clear to inspire leadership, uphold professionalism, and advance the science that sustains life.
+        </p>
+
+        <p style="text-align: justify; font-size: 1.05rem; line-height: 1.8;">
+          Together, we continue to <strong>Inquire, Analyze, Create, and Transform (I ACT)</strong> for a healthier and 
+          brighter future.
+        </p>
+
+        <p class="mt-4 mb-0" style="font-style: italic; color: #22512d;">
+          With warm regards,
+        </p>
+        <p class="mb-0 fw-bold">Rt. Hon. Olorunniyi Pelumi Olaoluwa</p>
+        <p>Regional President, NIMELSSA Southwest Region</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Us -->
+<!-- <section id="join" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Join Us</h2>
+    <p class="text-center">Become a member and enjoy benefits like networking, mentorship, and exclusive events.</p>
+    <div class="text-center">
+      <a href="#" class="btn btn-success btn-lg">Sign Up Now</a>
+    </div>
+  </div>
+</section> -->
+
+<!-- Committees -->
+
+
+
+<!-- chapters will be here instead of committees -->
+
+
+<!-- Universities Offering Medical Laboratory Science -->
+<section id="universities" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4" style="color: rgba(34,81,45,255);">
+      Universities Offering Medical Laboratory Science in Southwestern Nigeria
+    </h2>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-success text-center">
+          <tr>
+            <th>S/N</th>
+            <th>University Name</th>
+            <th>Location (State)</th>
+            <th>Official Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Achievers University, Owo</td><td>Ondo State</td><td><a href="https://www.achievers.edu.ng" target="_blank">achievers.edu.ng</a></td></tr>
+          <tr><td>2</td><td>Adeleke University, Ede</td><td>Osun State</td><td><a href="https://adelekeuniversity.edu.ng" target="_blank">adelekeuniversity.edu.ng</a></td></tr>
+          <tr><td>3</td><td>Afe Babalola University, Ado-Ekiti (ABUAD)</td><td>Ekiti State</td><td><a href="https://www.abuad.edu.ng" target="_blank">abuad.edu.ng</a></td></tr>
+          <tr><td>4</td><td>Anchor University, Lagos</td><td>Lagos State</td><td><a href="https://aul.edu.ng" target="_blank">aul.edu.ng</a></td></tr>
+          <tr><td>5</td><td>Atiba University, Oyo</td><td>Oyo State</td><td><a href="https://www.atibauniversity.edu.ng" target="_blank">atibauniversity.edu.ng</a></td></tr>
+          <tr><td>6</td><td>Babcock University, Ilisan-Remo</td><td>Ogun State</td><td><a href="https://www.babcock.edu.ng" target="_blank">babcock.edu.ng</a></td></tr>
+          <tr><td>7</td><td>Bowen University, Iwo</td><td>Osun State</td><td><a href="https://www.bowen.edu.ng" target="_blank">bowen.edu.ng</a></td></tr>
+          <tr><td>8</td><td>Caleb University, Imota, Lagos</td><td>Lagos State</td><td><a href="https://www.calebuniversity.edu.ng" target="_blank">calebuniversity.edu.ng</a></td></tr>
+          <tr><td>9</td><td>Chrisland University, Abeokuta</td><td>Ogun State</td><td><a href="https://www.chrislanduniversity.edu.ng" target="_blank">chrislanduniversity.edu.ng</a></td></tr>
+          <tr><td>10</td><td>Covenant University, Ota</td><td>Ogun State</td><td><a href="https://www.covenantuniversity.edu.ng" target="_blank">covenantuniversity.edu.ng</a></td></tr>
+          <tr><td>11</td><td>Dominion University, Ibadan</td><td>Oyo State</td><td><a href="https://www.dominionuniversity.edu.ng" target="_blank">dominionuniversity.edu.ng</a></td></tr>
+          <tr><td>12</td><td>Ekiti State University (EKSU)</td><td>Ekiti State</td><td><a href="https://eksu.edu.ng" target="_blank">eksu.edu.ng</a></td></tr>
+          <tr><td>13</td><td>Elizade University, Ilara-Mokin</td><td>Ondo State</td><td><a href="https://www.elizadeuniversity.edu.ng" target="_blank">elizadeuniversity.edu.ng</a></td></tr>
+          <tr><td>14</td><td>Federal University of Health Sciences, Ila-Orangun</td><td>Osun State</td><td><a href="https://fuhsila.edu.ng" target="_blank">fuhsila.edu.ng</a></td></tr>
+          <tr><td>15</td><td>Federal University of Oye-Ekiti (FUOYE)</td><td>Ekiti State</td><td><a href="https://fuoye.edu.ng" target="_blank">fuoye.edu.ng</a></td></tr>
+          <tr><td>16</td><td>Federal University of Technology, Akure (FUTA)</td><td>Ondo State</td><td><a href="https://www.futa.edu.ng" target="_blank">futa.edu.ng</a></td></tr>
+          <tr><td>17</td><td>Fountain University, Osogbo</td><td>Osun State</td><td><a href="https://fountainuniversity.edu.ng" target="_blank">fountainuniversity.edu.ng</a></td></tr>
+          <tr><td>18</td><td>Harvarde College of Science, Business & Management Studies</td><td>Ogun State</td><td><a href="https://harvardecollege.edu.ng" target="_blank">harvardecollege.edu.ng</a></td></tr>
+          <tr><td>19</td><td>Joseph Ayo Babalola University (JABU)</td><td>Osun State</td><td><a href="https://www.jabu.edu.ng" target="_blank">jabu.edu.ng</a></td></tr>
+          <tr><td>20</td><td>Kola Daisi University, Ibadan</td><td>Oyo State</td><td><a href="https://www.koladaisiuniversity.edu.ng" target="_blank">koladaisiuniversity.edu.ng</a></td></tr>
+          <tr><td>21</td><td>Ladoke Akintola University of Technology (LAUTECH)</td><td>Oyo State</td><td><a href="https://www.lautech.edu.ng" target="_blank">lautech.edu.ng</a></td></tr>
+          <tr><td>22</td><td>Lagos State University (LASU)</td><td>Lagos State</td><td><a href="https://lasu.edu.ng" target="_blank">lasu.edu.ng</a></td></tr>
+          <tr><td>23</td><td>Lead City University, Ibadan</td><td>Oyo State</td><td><a href="https://www.lcu.edu.ng" target="_blank">lcu.edu.ng</a></td></tr>
+          <tr><td>24</td><td>McPherson University, Seriki Sotayo</td><td>Ogun State</td><td><a href="https://www.mcu.edu.ng" target="_blank">mcu.edu.ng</a></td></tr>
+          <tr><td>25</td><td>Mountain Top University, Makogi-Oba</td><td>Ogun State</td><td><a href="https://mtu.edu.ng" target="_blank">mtu.edu.ng</a></td></tr>
+          <tr><td>26</td><td>Olabisi Onabanjo University (OOU), Ago-Iwoye</td><td>Ogun State</td><td><a href="https://oouagoiwoye.edu.ng" target="_blank">oouagoiwoye.edu.ng</a></td></tr>
+          <tr><td>27</td><td>Osun State University (UNIOSUN)</td><td>Osun State</td><td><a href="https://uniosun.edu.ng" target="_blank">uniosun.edu.ng</a></td></tr>
+          <tr><td>28</td><td>Redeemer’s University, Ede</td><td>Osun State</td><td><a href="https://run.edu.ng" target="_blank">run.edu.ng</a></td></tr>
+          <tr><td>29</td><td>Trinity University, Lagos</td><td>Lagos State</td><td><a href="https://www.trinityuniversity.edu.ng" target="_blank">trinityuniversity.edu.ng</a></td></tr>
+          <tr><td>30</td><td>University of Ibadan (UI)</td><td>Oyo State</td><td><a href="https://www.ui.edu.ng" target="_blank">ui.edu.ng</a></td></tr>
+          <tr><td>31</td><td>University of Ilesa</td><td>Osun State</td><td><a href="https://unilesa.edu.ng" target="_blank">unilesa.edu.ng</a></td></tr>
+          <tr><td>32</td><td>University of Lagos (UNILAG)</td><td>Lagos State</td><td><a href="https://unilag.edu.ng" target="_blank">unilag.edu.ng</a></td></tr>
+          <tr><td>33</td><td>University of Medical Sciences (UNIMED), Ondo City</td><td>Ondo State</td><td><a href="https://unimed.edu.ng" target="_blank">unimed.edu.ng</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section id="committees">
+  <div class="container">
+    <h2 class="text-center mb-4">Committees</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Cultural Committee</h5>
+        <p>Organizes cultural events, talent shows, and heritage days.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Academic Committee</h5>
+        <p>Supports students academically through tutorials and seminars.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Sports Committee</h5>
+        <p>Promotes physical activity and inter-school competitions.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <img src="images/image1 (1).jpg" alt="Test Image"> -->
+
+
+<!-- Resources -->
+<!-- <section id="resources" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Resources</h2>
+    <ul>
+      <li><a href="#">Download Constitution PDF</a></li>
+      <li><a href="#">Meeting Minutes</a></li>
+      <li><a href="#">Budget Reports</a></li>
+    </ul>
+  </div>
+</section> -->
+
+<!-- Gallery -->
+<section id="gallery">
+  <div class="container">
+    <h2 class="text-center mb-4">Gallery</h2>
+    <div class="row g-2" id="gallery-preview"></div>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#galleryModal">
+        View More
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal with Carousel -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen"> <!-- Fullscreen modal -->
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <!-- Carousel -->
+        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="gallery-carousel-inner"></div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer border-0 justify-content-center">
+        <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Sponsors -->
+<!-- <section id="sponsors" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Sponsors & Partners</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <img src="https://picsum.photos/150?random=6" class="img-fluid" alt="Sponsor">
+      <img src="https://picsum.photos/150?random=7" class="img-fluid" alt="Sponsor">
+    </div>
+  </div>
+</section> -->
+
+<!-- Partners / Sponsors Section -->
+<section id="partners" class="py-5" style="background-color: #f8f9f5;">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" style="color: rgba(34,81,45,255);">Our Partners & Sponsors</h2>
+    <p class="text-muted mb-5">We proudly collaborate with outstanding institutions and brands supporting our vision.</p>
+
+    <!-- Carousel -->
+    <div id="sponsorCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
+            <img src="Life Anchor Advert.png" alt="Sponsor 1" class="img-fluid" style="max-height: 80px;">
+            <img src="total.png" alt="Sponsor 2" class="img-fluid" style="max-height: 80px;">
+            <img src="Genomac.png" alt="Sponsor 3" class="img-fluid" style="max-height: 80px;">
+            <img src="sqi.png" alt="Sponsor 4" class="img-fluid" style="max-height: 80px;">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
+            <img src="Genomac.png" alt="Sponsor 5" class="img-fluid" style="max-height: 80px;">
+            <img src="sqi.png" alt="Sponsor 6" class="img-fluid" style="max-height: 80px;">
+            <img src="total.png" alt="Sponsor 7" class="img-fluid" style="max-height: 80px;">
+            <img src="Life Anchor Advert.png" alt="Sponsor 8" class="img-fluid" style="max-height: 80px;">
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
+            <img src="Genomac.png" alt="Sponsor 5" class="img-fluid" style="max-height: 80px;">
+            <img src="sqi.png" alt="Sponsor 6" class="img-fluid" style="max-height: 80px;">
+            <img src="total.png" alt="Sponsor 7" class="img-fluid" style="max-height: 80px;">
+            <img src="Life Anchor Advert.png" alt="Sponsor 8" class="img-fluid" style="max-height: 80px;">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#sponsorCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#sponsorCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Resources -->
+<!-- Resources / Announcement Modal Trigger -->
+<!-- Resources / E-Library Section -->
+<section id="resources" class="py-5 bg-light text-center">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+      <!-- Modal Trigger Button -->
+      <button type="button" class="btn btn-success btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#elibraryModal">
+        📚 Access E-Library
+      </button>
+
+      <!-- Other Resource Buttons -->
+      <a href="NIMELSSA_SOUTHWEST_CONSTITUTION[1].docx" target="_blank" class="btn btn-success btn-lg px-4 py-3">
+        📜 Download the Constitution
+      </a>
+      <a href="https://example-elibrary-link.com" target="_blank" class="btn btn-success btn-lg px-4 py-3">
+        🎶 Download the NIMELSSA Anthem
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="elibraryModal" tabindex="-1" aria-labelledby="elibraryTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title fw-bold" id="elibraryTitle">📚 NIMELSSA E-LIBRARY</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-start">
+        <p>
+          <strong>The NIMELSSA National Directorate of Academics</strong> is proud to announce the 
+          <strong>launch of the NIMELSSA E-Library</strong> — a platform offering access to top 
+          Medical Laboratory Science textbooks, scholarship past questions, and professional exam past questions.
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">📘 General Medical Laboratory Science Textbooks</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1HlKZHWpxOtY1BbxjewJs1jRmre8aFTRc" target="_blank" class="link-success text-decoration-none">
+            Access Textbooks
+          </a>
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">🎓 Scholarship Past Questions, CV Samples, and Statements of Purpose</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1GghrKVRaIJ3QtyGoMyB5PP7ntoFjqp61" target="_blank" class="link-success text-decoration-none">
+            Access Scholarship Resources
+          </a>
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">🧪 Professional Examination Past Questions</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1LOkGjXmYFgkzy8HAh899I4Ho5CNUmu1n" target="_blank" class="link-success text-decoration-none">
+            Access Professional Exams
+          </a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          <button class="btn btn-primary">Send</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Email:</strong> Nimelssa.southwestregion@gmail.com</p>
+        <p><strong>Phone:</strong> +234 806 390 3225</p>
+        <p><strong>Office:</strong> Ladoke Akintola University Of Technology, Ogbomo, Nigeria</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: rgba(34,81,45,255);">
+  <p>&copy; 2025 Student Association. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3">
+  <a href="https://web.facebook.com/profile.php?id=61561918256194"><i class="bi bi-facebook text-white"></i></a>
+  <a href="https://x.com/NimelssaR17193"><i class="bi bi-twitter text-white"></i></a>
+    <a href="https://www.tiktok.com/@nimelssasouthwest"><i class="bi bi-tiktok text-white"></i></a>
+  <a href="https://www.instagram.com/nimelssa.southwest?igsh=bmtydGVjeXIxbTZi"><i class="bi bi-instagram text-white"></i></a>
+</div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script>
+  fetch("images.json")
+    .then(res => res.json())
+    .then(files => {
+      const container = document.getElementById("gallery-container");
+
+      files.forEach(file => {
+        let div = document.createElement("div");
+        div.className = "col-6 col-md-3";
+        div.innerHTML = `
+          <img src="Pictures/${file}" class="img-fluid rounded shadow-sm" alt="Gallery Image">
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => console.error("Error loading images:", err));
+</script> -->
+<script>
+  fetch("images.json")
+    .then(res => res.json())
+    .then(files => {
+      const preview = document.getElementById("gallery-preview");
+      const carouselInner = document.getElementById("gallery-carousel-inner");
+
+      // Show only first 6 preview images on main page
+      files.slice(0, 6).forEach(file => {
+        let div = document.createElement("div");
+        div.className = "col-6 col-md-4";
+        div.innerHTML = `<img src="Pictures/${file}" class="img-fluid rounded shadow-sm">`;
+        preview.appendChild(div);
+      });
+
+      // Load all images into carousel
+      files.forEach((file, index) => {
+        let div = document.createElement("div");
+        div.className = "carousel-item" + (index === 0 ? " active" : "");
+        div.innerHTML = `<img src="Pictures/${file}" class="d-block w-100" style="object-fit:contain; max-height:90vh;">`;
+        carouselInner.appendChild(div);
+      });
+    })
+    .catch(err => console.error("Error loading images:", err));
+
+    window.addEventListener("scroll", function () {
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+  (function () {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+
+    // run once on load and then on scroll
+    document.addEventListener('DOMContentLoaded', onScroll);
+    window.addEventListener('scroll', onScroll);
+  })();
+
+</script>
+
+
+</body>
+</html>

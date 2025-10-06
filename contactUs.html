@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="icon" href="logo1.png">
+
+</head>
+<body>
+    <style>
+        .nav-item{
+            color: white;
+        }
+        .navbar {
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+/* navbar when scrolled */
+.navbar.scrolled {
+  background: rgba(34,81,45,0.95) !important; /* solid green on scroll */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+/* ensure nav links stay white over transparent/colored navbar */
+.navbar .nav-link { color: #fff !important; }
+.navbar .navbar-brand img { filter: none; } /* adjust if you need to invert logo */
+
+         .navbar-dark .nav-link:hover {
+  color: #f8d24f !important; /* golden hover color */
+}
+    </style>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(34,81,45,255);">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo1.png" alt="Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
+        <li class="nav-item"><a class="nav-link" href="Event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+      <section id="contact-us" class="py-5" style="background: linear-gradient(135deg, #f0fdf4, #d9f99d);">
+  <div class="container">
+    <!-- Header -->
+     <br>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-success">Contact Us</h2>
+      <p class="lead text-muted">We’d love to hear from you — drop us a message and we'll get back soon.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4 p-4">
+          <h5 class="mb-4"><i class="bi bi-chat-left-text-fill text-success"></i> Send Us a Message</h5>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label fw-semibold">Your Name</label>
+              <input type="text" id="name" class="form-control rounded-pill shadow-sm" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Your Email</label>
+              <input type="email" id="email" class="form-control rounded-pill shadow-sm" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold">Message</label>
+              <textarea id="message" class="form-control shadow-sm rounded-4" rows="4" placeholder="Type your message..." required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="inquiryType" class="form-label fw-semibold">Reason for Contact</label>
+              <select id="inquiryType" class="form-select shadow-sm rounded-pill">
+                <option selected>General inquiry</option>
+                <option>Membership</option>
+                <option>Events</option>
+                <option>Press</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100 rounded-pill shadow">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4 p-4 mb-4">
+          <h5><i class="bi bi-envelope-fill text-success"></i> Email</h5>
+          <p>Nimelssa.southwestregion@gmail.com</p>
+
+          <h5><i class="bi bi-telephone-fill text-success"></i> Phone</h5>
+          <p>+234 806 390 3225</p>
+
+          <h5><i class="bi bi-geo-alt-fill text-success"></i> Office Location</h5>
+          <p>Ladoke Akintola University Of Technology, Ogbomo, Nigeria</p>
+
+          <h5><i class="bi bi-globe2 text-success"></i> Connect with Us</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="#" class="text-success"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-success"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-success"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Map -->
+<!-- Map -->
+<div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+  <div class="ratio ratio-16x9">
+    <iframe
+      src="https://maps.google.com/maps?q=Ladoke%20Akintola%20University%20of%20Technology%2C%20Ogbomoso&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: rgba(34,81,45,255);">
+    <p>&copy; 2025 Student Association. All rights reserved.</p>
+          <div class="d-flex justify-content-center gap-3">
+  <a href="https://web.facebook.com/profile.php?id=61561918256194"><i class="bi bi-facebook text-white"></i></a>
+  <a href="https://x.com/NimelssaR17193"><i class="bi bi-twitter text-white"></i></a>
+    <a href="https://www.tiktok.com/@nimelssasouthwest"><i class="bi bi-tiktok text-white"></i></a>
+  <a href="https://www.instagram.com/nimelssa.southwest?igsh=bmtydGVjeXIxbTZi"><i class="bi bi-instagram text-white"></i></a>
+</div>
+  </footer>
+</body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+          window.addEventListener("scroll", function () {
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+  (function () {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+
+    // run once on load and then on scroll
+    document.addEventListener('DOMContentLoaded', onScroll);
+    window.addEventListener('scroll', onScroll);
+  })();
+  </script>
+</html>
