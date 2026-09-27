@@ -106,23 +106,62 @@
       text-decoration: none;
     }
   </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="logo1.png" alt="Logo" height="40"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo1.png" alt="Logo" height="40">
+    </a>
+ 
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+ 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
-        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+ 
+        <li class="nav-item executives-dropdown">
+          <a class="nav-link executives-link" href="executives.html">
+            Executives
+            <i class="bi bi-chevron-down dropdown-arrow"></i>
+          </a>
+ 
+          <ul class="past-executives-menu">
+            <li>
+              <a href="aboutUs.html">
+                <i class="bi bi-people-fill"></i>
+                Past Executives
+              </a>
+            </li>
+          </ul>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="Event.html">Events</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+ 
       </ul>
     </div>
   </div>
@@ -147,9 +186,10 @@
 
     <!-- === POST 1: Esteemed Patron === -->
       <!-- === NEWS 1: Esteemed Patron === -->
+         <div class="row g-4">
       <div class="col-md-6">
         <div class="news-card">
-          <img src="1 (8).jpg" alt="Mr A.A. Odekanmi - Patron">
+          <img src="Pictures/1 (8).jpg" alt="Mr A.A. Odekanmi - Patron">
           <div class="news-body">
             <h5 class="headline">Introducing Our Esteemed Patron</h5>
             <p class="meta">Published: July 2025 | Author: NIMELSSA Southwest</p>
@@ -166,7 +206,7 @@
           <!-- === NEWS 2: Courtesy Visit === -->
       <div class="col-md-6">
         <div class="news-card">
-          <img src="1 (15).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
+          <img src="image1 (15).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
           <div class="news-body">
             <h5 class="headline">NIMELSSA SW Leaders Visit Redeemer’s University</h5>
             <p class="meta">Press Release | August 6, 2025</p>
@@ -182,7 +222,7 @@
 
             <div class="col-md-6">
         <div class="news-card">
-          <img src="1 (15).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
+          <img src="Pictures/1 (12).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
           <div class="news-body">
             <h5 class="headline">COURTESY VISIT TO THE ACTING VICE CHANCELLOR, UNIMED ONDO</h5>
             <p class="meta">June 7, 2025 • Southwest Regional Congress</p>
@@ -198,7 +238,7 @@
 
                   <div class="col-md-6">
         <div class="news-card">
-          <img src="1 (15).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
+          <img src="Pictures/1 (15).jpg" alt="NIMELSSA SW Leaders at Redeemer’s University">
           <div class="news-body">
             <h5 class="headline">NIMELSSA SOUTHWEST REGION PAYS COURTESY VISIT TO LAGOS STATE UNIVERSITY</h5>
             <p class="meta">July 8, 2025 • NIMELSSA Southwest Press</p>
@@ -227,6 +267,7 @@
           </div>
         </div>
       </div> -->
+      </div>
   </main>
 
   <!-- Footer -->
@@ -240,6 +281,17 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<!-- ✅ Import your Firebase config -->
+<script src="firebase-init.js"></script>
+
+<script>
+  const db = firebase.firestore();
+  // ... your renderNews() function here
+</script>
+
   <script src="navbar.js"></script>
 </body>
 </html>

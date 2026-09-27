@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executives</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero {
+  position: relative;
+  background: url('https://picsum.photos/1920/600?random=1') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+ 
+    .team-member img {
+  width: 150px;       /* same width for all */
+  height: 150px;      /* same height for all */
+  object-fit: cover;  /* crops excess parts, keeps proportion */
+  border-radius: 50%; /* ensures perfect circle */
+}
+/* make navbar transparent by default */
+.navbar {
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+ 
+/* navbar when scrolled */
+.navbar.scrolled {
+  background: rgba(34,81,45,0.95) !important; /* solid green on scroll */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+ 
+/* ensure nav links stay white over transparent/colored navbar */
+.navbar .nav-link { color: #fff !important; }
+.navbar .navbar-brand img { filter: none; } /* adjust if you need to invert logo */
+ 
+ .navbar-dark .nav-link:hover {
+  color: #f8d24f !important; /* golden hover color */
+}
+ 
+ 
+    .hero h1 { margin-bottom: 0.5rem; }
+    .team-member img { max-width: 150px; margin-bottom: 1rem; }
+    .timeline { border-left: 4px solid #0d6efd; margin-left: 2rem; padding-left: 2rem; }
+    .timeline .event { margin-bottom: 2rem; }
+    .timeline .event h5 { margin-bottom: 0.25rem; }
+    .cta-btn { margin-top: 2rem; }
+ 
+    /* Executives hover dropdown */
+.executives-dropdown {
+  position: relative;
+}
+ 
+.executives-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+ 
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+ 
+.executives-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+ 
+.past-executives-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 220px;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+ 
+  background: rgba(34, 81, 45, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+ 
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+ 
+.executives-dropdown:hover .past-executives-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+ 
+.executives-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  height: 15px;
+}
+ 
+.past-executives-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+ 
+  padding: 12px 15px;
+  border-radius: 7px;
+ 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+ 
+.past-executives-menu a:hover {
+  color: #f8d24f;
+  background-color: rgba(255, 255, 255, 0.14);
+  padding-left: 22px;
+}
+ 
+.past-executives-menu i {
+  color: #f8d24f;
+}
+ 
+@media (max-width: 991px) {
+  .past-executives-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+ 
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+ 
+  .executives-dropdown::after {
+    display: none;
+  }
+ 
+  /* de-emphasize the arrow on mobile since the submenu is already open */
+  .dropdown-arrow {
+    display: none;
+  }
+}
+ 
+    /* ===== Hover reveal on the existing circular team-member cards ===== */
+    .team-member {
+      position: relative;
+      min-height: 260px;
+      padding: 10px 10px 0;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+      transition: box-shadow 0.35s ease;
+    }
+ 
+    .team-member:hover,
+    .team-member:focus-within,
+    .team-member.flipped {
+      box-shadow: 0 14px 30px rgba(34, 81, 45, 0.22);
+    }
+ 
+    .team-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+ 
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(34, 81, 45, 0.94);
+      color: #fff;
+ 
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+ 
+    .team-member:hover .team-overlay,
+    .team-member:focus-within .team-overlay,
+    .team-member.flipped .team-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+ 
+    .team-overlay p {
+      font-size: 0.8rem;
+      margin: 6px 0;
+      word-break: break-word;
+    }
+ 
+    .team-overlay i {
+      color: #f8d24f;
+      margin-right: 5px;
+    }
+ 
+    .team-overlay a {
+      color: #fff;
+      text-decoration: none;
+    }
+ 
+    .team-overlay a:hover {
+      color: #f8d24f;
+    }
+  </style>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo1.png" alt="Logo" height="40">
+    </a>
+ 
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+ 
+        <li class="nav-item executives-dropdown">
+          <a class="nav-link executives-link" href="executives.html">
+            Executives
+            <i class="bi bi-chevron-down dropdown-arrow"></i>
+          </a>
+ 
+          <ul class="past-executives-menu">
+            <li>
+              <a href="aboutUs.html">
+                <i class="bi bi-people-fill"></i>
+                Past Executives
+              </a>
+            </li>
+          </ul>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="Event.html">Events</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+ 
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+
+
+  <!-- <div class="container"> -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+  <div class="container">
+    <h1>Meet Our Executives</h1>
+    <p class="lead">Dedicated leaders working together to serve, inspire, and empower students.</p>
+  </div>
+</section>
+
+    <!-- Team Members / Bios -->
+    <section id="team" class="pt-5">
+      <h2 class="text-center mb-4">Executives</h2>
+      <div class="row text-center">
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PRO1.jpg" class="rounded-circle" alt="President">
+          <h5>Rt. Hon. Olatunbosun Olusola Precious </h5>
+          <p>President</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345678">+234 8146841145</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>FUOYE</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:preciousolusola402@gmail.com">preciousolusola402@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="vicepre2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ayodele Emmanuel Ayooluwa </h5>
+          <p>Vice President 1</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345679">+234 8024900760</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Ladoke Akintola University of Technology</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:ayodeleemmanuel2102@gmail.com">ayodeleemmanuel2102@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="VP22.jpg" class="rounded-circle" alt="Treasurer">
+          <h5>Hon. Abubakar Maisara Temilade</h5>
+          <p>Vice President 2 </p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345680">+234 9017404108</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Fountain University, Oshogbo.</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:abubakartemilade999@gmail.com">abubakartemilade999@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="GS2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Adeyemo Isaac Oluwagbemileke</h5>
+          <p>General Secretary</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345681">+234 8061269586</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Federal University Oye Ekiti (FUOYE)</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:adeyemoisaac53@gmail.com">adeyemoisaac53@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="AGS2.JPG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Peterjegede Nancy Ozavukwuo   </h5>
+          <p>Assistant General secretary</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345682">+234 8104456905</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Joseph Ayo Babalola university</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:peterjegedenancy@gmail.com">peterjegedenancy@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="FIN2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Adegbola Abdullahi Adesina </h5>
+          <p>Financial Secretary</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345683">+234 9069230021</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>FUOYE Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:abdullahiadegbola80@gmail.com">abdullahiadegbola80@gmail.comm</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="Treasurer.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Eweolaru Emmanuel Ayomide </h5>
+          <p>Treasurer</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348012345683">+234 7057502850</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Osun State University (UNIOSUN)</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:mogajiemmacrypt@gmail.com">mogajiemmacrypt@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PRO12.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Alagbe Joseph Similoluwa </h5>
+          <p>Public relation officer 1</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9036962584</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>FUOYE Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:alagbejosephadewale@gmail.com">alagbejosephadewale@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PRO22.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon.  Victoria Owolabi</h5>
+          <p>Public relation officer 2</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9035987250</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Chrisland University </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:connectvictoria19@gmail.com">connectvictoria19@gmail.com</a></p>
+          </div>
+        </div>
+
+
+                <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="Social2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ahmed Sekinat Tinuade </h5>
+          <p>Social Director</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8076212084</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>SOsun state University Osogbo</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:sekinattinuade1@gmail.com">sekinattinuade1@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="HEALTH2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Adeyemi Emmanuella Oluwatomisin</h5>
+          <p>Director of Health advocacy</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 7035017144</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Ajayi Crowther University</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:ellaadeyemi2020@gmail.com">ellaadeyemi2020@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="WELFARE2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Ibitayo Oluwadamilare David</h5>
+          <p>Welfare Director</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 7044240281</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i> Osun state university (UNIOSUN) </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:oluwadamilareibitayo1@gmail.com">oluwadamilareibitayo1@gmail.com</a></p>
+          </div>
+        </div>
+
+                <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="AWELFARE.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Farounbi Oluwabukola Racheal </h5>
+          <p>Assistant Welfare Director</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 81 3396 5373 </a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>FUOYE Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:farounbioluwabukola@gmail.com">farounbioluwabukola@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PROGRAM2.jpeg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Lateef Abdulbasit Akintunde </h5>
+          <p>Programme Coordinator 1</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8155553181</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>University of Lagos</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:lateefabdulbasit42@gmail.com">lateefabdulbasit42@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PROGRAM22.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Adegoke Esther Adedunsin</h5>
+          <p>Programme Coordinator 2</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8161564752</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Joseph Ayo Babalola University </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:adegokeesther216@gmail.com">adegokeesther216@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="SPORT2.JPEG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Omotosho Samiat Omotola</h5>
+          <p>Sport Director</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8029904290</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Fountain University</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:sports@nimelssasw.org">omotoshosamiat2003@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PA2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Oluwanifemi Christianah Olaoye </h5>
+          <p>Personal Assistant to the President</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9058124226</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i> FUOYE Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:oluwanifemiolaoye916@gmail.com">oluwanifemiolaoye916@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="PRESS2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon.  Favour Motunrayo Lawrence </h5>
+          <p>Director of Press</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9127609062</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Federal University of health sciences Ila orangun Osun state </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:favourlaw27@gmail.com">favourlaw27@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="DFR.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon.  Idigun Hope Esther</h5>
+          <p>Director for female and Reproductive health</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9071168946 </a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>FUOYE Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:hopeidigun@gmail.com">hopeidigun@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="ADGR.jPG" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Abolaji Emmanuel O.</h5>
+          <p>Assistant Director for gender and Reproductive health </p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 9049634011</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>university of Medical science ondo </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:dorcasmon2021@gmail.com">dorcasmon2021@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="CHIEF2.jpeg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Olurotimi Aderinola Esther</h5>
+          <p>Chief Whip</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 7034341385</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Joseph Ayo Babalola University (JABU) Chapter </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:aderinolaolurotimi@gmail.com">aderinolaolurotimi@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="sa2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Omidiran Christianah Temilade</h5>
+          <p>Special Adviser to the president</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8132042765</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>Federal University Oye Ekiti</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:sa@nimelssasw.org">modupeoluwa3204@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 team-member" tabindex="0">
+          <img src="Stra2.jpg" class="rounded-circle" alt="Vice President">
+          <h5>Hon. Olaboye Favour Oluwatomisin</h5>
+          <p>Director of Strategic Planning</p>
+          <div class="team-overlay">
+            <p><i class="bi bi-telephone-fill"></i><a href="tel:+2348000000000">+234 8121326082</a></p>
+            <p><i class="bi bi-geo-alt-fill"></i>McPherson University </p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:strategy@nimelssasw.org">favourtomisin12@gmail.com</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <!-- <section id="cta" class="text-center pt-5">
+      <p class="lead">Want to get to know us more? Check our events or join as a member!</p>
+      <a href="events.html" class="btn btn-primary btn-lg cta-btn">View Events</a>
+      <a href="join.html" class="btn btn-success btn-lg cta-btn">Join Us</a>
+    </section> -->
+<!-- Footer -->
+<footer class="text-center py-3 text-white" style="background-color: rgba(34,81,45,255);">
+    <p>&copy; 2025 Student Association. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3">
+  <a href="https://web.facebook.com/profile.php?id=61561918256194"><i class="bi bi-facebook text-white"></i></a>
+  <a href="https://x.com/NimelssaR17193"><i class="bi bi-twitter text-white"></i></a>
+    <a href="https://www.tiktok.com/@nimelssasouthwest"><i class="bi bi-tiktok text-white"></i></a>
+  <a href="https://www.instagram.com/nimelssa.southwest?igsh=bmtydGVjeXIxbTZi"><i class="bi bi-instagram text-white"></i></a>
+</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+        window.addEventListener("scroll", function () {
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+  (function () {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+
+    document.addEventListener('DOMContentLoaded', onScroll);
+    window.addEventListener('scroll', onScroll);
+  })();
+
+  // Tap-to-reveal for touch devices (hover doesn't work reliably on mobile)
+  (function () {
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    if (!isTouch) return;
+    document.querySelectorAll('#team .team-member').forEach(function (card) {
+      card.addEventListener('click', function () {
+        document.querySelectorAll('#team .team-member.flipped').forEach(function (other) {
+          if (other !== card) other.classList.remove('flipped');
+        });
+        card.classList.toggle('flipped');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

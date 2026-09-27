@@ -1,0 +1,122 @@
+
+    /* Executives hover dropdown */
+.executives-dropdown {
+  position: relative;
+}
+
+/* Executives link */
+.executives-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Small arrow beside Executives */
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when hovering */
+.executives-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.past-executives-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 220px;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+
+  background: rgba(34, 81, 45, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.executives-dropdown:hover .past-executives-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* Invisible bridge prevents the dropdown from disappearing */
+.executives-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  height: 15px;
+}
+
+/* Dropdown link */
+.past-executives-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+
+  padding: 12px 15px;
+  border-radius: 7px;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.past-executives-menu a:hover {
+  color: #f8d24f;
+  background-color: rgba(255, 255, 255, 0.14);
+  padding-left: 22px;
+}
+
+.past-executives-menu i {
+  color: #f8d24f;
+}
+
+/* Mobile layout */
+@media (max-width: 991px) {
+  .past-executives-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /*
+    On smaller screens, hover can still display
+    the menu when the navbar is open.
+  */
+  .executives-dropdown:hover .past-executives-menu {
+    display: block;
+    transform: none;
+  }
+
+  .executives-dropdown::after {
+    display: none;
+  }
+}

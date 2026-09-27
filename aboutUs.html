@@ -52,27 +52,190 @@
     .timeline .event { margin-bottom: 2rem; }
     .timeline .event h5 { margin-bottom: 0.25rem; }
     .cta-btn { margin-top: 2rem; }
+
+    /* Executives hover dropdown */
+.executives-dropdown {
+  position: relative;
+}
+
+/* Executives link */
+.executives-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Small arrow beside Executives */
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when hovering */
+.executives-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.past-executives-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 220px;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+
+  background: rgba(34, 81, 45, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.executives-dropdown:hover .past-executives-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* Invisible bridge prevents the dropdown from disappearing */
+.executives-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  height: 15px;
+}
+
+/* Dropdown link */
+.past-executives-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+
+  padding: 12px 15px;
+  border-radius: 7px;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.past-executives-menu a:hover {
+  color: #f8d24f;
+  background-color: rgba(255, 255, 255, 0.14);
+  padding-left: 22px;
+}
+
+.past-executives-menu i {
+  color: #f8d24f;
+}
+
+/* Mobile layout */
+@media (max-width: 991px) {
+  .past-executives-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /*
+    On smaller screens, hover can still display
+    the menu when the navbar is open.
+  */
+  .executives-dropdown:hover .past-executives-menu {
+    display: block;
+    transform: none;
+  }
+
+  .executives-dropdown::after {
+    display: none;
+  }
+}
+
   </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="logo1.png" alt="Logo" height="40"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo1.png" alt="Logo" height="40">
+    </a>
+ 
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+ 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
-        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+ 
+        <li class="nav-item executives-dropdown">
+          <a class="nav-link executives-link" href="executives.html">
+            Executives
+            <i class="bi bi-chevron-down dropdown-arrow"></i>
+          </a>
+ 
+          <ul class="past-executives-menu">
+            <li>
+              <a href="aboutUs.html">
+                <i class="bi bi-people-fill"></i>
+                Past Executives
+              </a>
+            </li>
+          </ul>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="Event.html">Events</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+ 
       </ul>
     </div>
   </div>
 </nav>
+
 
   <!-- <div class="container"> -->
     <!-- Hero Section -->
@@ -127,6 +290,11 @@
     <section id="team" class="pt-5">
       <h2 class="text-center mb-4">Executives</h2>
       <div class="row text-center">
+          <div class="col-6 col-md-4 col-lg-3 team-member">
+          <img src="Jimoh.JPG" class="rounded-circle" alt="President">
+          <h5>Mls Jimoh Hammed Babatundeddddd</h5>
+          <p>2nd Nimelssa Southwest Regional President</p>
+        </div>
   <div class="col-6 col-md-4 col-lg-3 team-member">
           <img src="presido.jpg" class="rounded-circle" alt="President">
           <h5>Rt. Hon. Olorunniyi Pelumi Olaoluwa</h5>

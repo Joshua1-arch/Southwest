@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NIMELSSA SOUTHWEST</title>
-
+  <link rel="icon" type="image/png" href="logo1.png">
+  <link rel="stylesheet" href="index.css">
   <!-- animation on scroll -->
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,17 +109,55 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="logo1.png" alt="Logo" height="40"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo1.png" alt="Logo" height="40">
+    </a>
+ 
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+ 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="aboutUs.html">Executives</a></li>
-        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+ 
+        <li class="nav-item executives-dropdown">
+          <a class="nav-link executives-link" href="executives.html">
+            Executives
+            <i class="bi bi-chevron-down dropdown-arrow"></i>
+          </a>
+ 
+          <ul class="past-executives-menu">
+            <li>
+              <a href="aboutUs.html">
+                <i class="bi bi-people-fill"></i>
+                Past Executives
+              </a>
+            </li>
+          </ul>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="Event.html">Events</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">News</a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+ 
       </ul>
     </div>
   </div>
@@ -171,14 +210,14 @@
         <!-- Event 1 -->
         <div class="col-md-5 mb-4">
           <div class="card shadow-sm text-center">
-            <img src="event2.jpg" 
+            <img src="ekiti2026.jpg" 
                  class="mx-auto d-block mt-3 rounded" 
-                 alt="Ogbomos '25 Convention" 
+                 alt="Ekiti '26 Convention" 
                  style="max-width: 90%; height: auto;">
             <div class="card-body">
-              <h5 class="card-title">Ogbomos '25 NIMELSSA Southwest Convention</h5>
-              <p class="mb-2">Date: Sept 25, 2025</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScLCJdC8a-HjvtPdqZIPT_-MYqmRfsb5wiS9mNxQjXDqdpaxw/viewform?usp=send_form" class="btn btn-primary">Register</a>
+              <h5 class="card-title">NIMELSSA Southwest Regional Convention/AGM Ekiti 2026</h5>
+              <p class="mb-2">Date: October 6th–10th, 2026</p>
+              <a href="ekiti2026.html" class="btn btn-primary">Details & Registration</a>
             </div>
           </div>
         </div>
@@ -265,7 +304,7 @@
       <!-- Speech Section -->
       <div class="col-md-7">
         <p style="text-align: justify; font-size: 1.05rem; line-height: 1.8;">
-          Dear Comrades and Visitors, it is a great honor to welcome you to the official website of the 
+          Dear Comrades and Visitors, it is a great honour to welcome you to the official website of the 
           <strong>Nigerian Medical Laboratory Science Students’ Association, Southwest Region</strong>.
           This platform reflects our shared commitment to unity, innovation, and excellence among Medical 
           Laboratory Science students.
@@ -472,32 +511,14 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
-            <img src="Life Anchor Advert.png" alt="Sponsor 1" class="img-fluid" style="max-height: 80px;">
-            <img src="Life Anchor Advert.png" alt="Sponsor 2" class="img-fluid" style="max-height: 80px;">
-            <img src="Genomac.png" alt="Sponsor 3" class="img-fluid" style="max-height: 80px;">
-            <img src="Genomac.png" alt="Sponsor 4" class="img-fluid" style="max-height: 80px;">
+            <img src="Life Anchor Advert.png" alt="Sponsor 1" class="img-fluid" style="max-height: 50px;">
+            <img src="total.png" alt="Sponsor 2" class="img-fluid" style="max-height: 50px;">
+            <img src="Genomac.png" alt="Sponsor 3" class="img-fluid" style="max-height: 50px;">
+            <img src="sqi.png" alt="Sponsor 4" class="img-fluid" style="max-height: 50px;">
           </div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
-            <img src="Genomac.png" alt="Sponsor 5" class="img-fluid" style="max-height: 80px;">
-            <img src="Genomac.png" alt="Sponsor 6" class="img-fluid" style="max-height: 80px;">
-            <img src="Life Anchor Advert.png" alt="Sponsor 7" class="img-fluid" style="max-height: 80px;">
-            <img src="Life Anchor Advert.png" alt="Sponsor 8" class="img-fluid" style="max-height: 80px;">
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <div class="d-flex justify-content-center align-items-center gap-5 flex-wrap">
-            <img src="sponsor9.png" alt="Sponsor 9" class="img-fluid" style="max-height: 80px;">
-            <img src="sponsor10.png" alt="Sponsor 10" class="img-fluid" style="max-height: 80px;">
-            <img src="sponsor11.png" alt="Sponsor 11" class="img-fluid" style="max-height: 80px;">
-            <img src="sponsor12.png" alt="Sponsor 12" class="img-fluid" style="max-height: 80px;">
-          </div>
-        </div>
 
       </div>
 
@@ -514,44 +535,79 @@
 
 
 <!-- Resources -->
+<!-- Resources / Announcement Modal Trigger -->
+<!-- Resources / E-Library Section -->
 <section id="resources" class="py-5 bg-light text-center">
-  <a href="https://example-elibrary-link.com" target="_blank" class="btn btn-success btn-lg">
-    📚 Access E-Library
-  </a>
-</section>
-
-
-<!-- Contact -->
-<section id="contact">
   <div class="container">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <form>
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Your Name">
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Your Email">
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
-          </div>
-          <button class="btn btn-primary">Send</button>
-        </form>
-      </div>
-      <div class="col-md-6">
-        <p><strong>Email:</strong> info@association.org</p>
-        <p><strong>Phone:</strong> +234 800 000 0000</p>
-        <p><strong>Office:</strong> Student Secretariat, University Campus</p>
-      </div>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+      <!-- Modal Trigger Button -->
+      <button type="button" class="btn btn-success btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#elibraryModal">
+        📚 Access E-Library
+      </button>
+
+      <!-- Other Resource Buttons -->
+      <a href="NIMELSSA_SOUTHWEST_CONSTITUTION[1].docx" target="_blank" class="btn btn-success btn-lg px-4 py-3">
+        📜 Download the Constitution
+      </a>
+      <a href="https://example-elibrary-link.com" target="_blank" class="btn btn-success btn-lg px-4 py-3">
+        🎶 Download the NIMELSSA Anthem
+      </a>
     </div>
   </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="elibraryModal" tabindex="-1" aria-labelledby="elibraryTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title fw-bold" id="elibraryTitle">📚 NIMELSSA E-LIBRARY</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-start">
+        <p>
+          <strong>The NIMELSSA National Directorate of Academics</strong> is proud to announce the 
+          <strong>launch of the NIMELSSA E-Library</strong> — a platform offering access to top 
+          Medical Laboratory Science textbooks, scholarship past questions, and professional exam past questions.
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">📘 General Medical Laboratory Science Textbooks</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1HlKZHWpxOtY1BbxjewJs1jRmre8aFTRc" target="_blank" class="link-success text-decoration-none">
+            Access Textbooks
+          </a>
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">🎓 Scholarship Past Questions, CV Samples, and Statements of Purpose</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1GghrKVRaIJ3QtyGoMyB5PP7ntoFjqp61" target="_blank" class="link-success text-decoration-none">
+            Access Scholarship Resources
+          </a>
+        </p>
+
+        <h6 class="fw-bold mt-3 text-success">🧪 Professional Examination Past Questions</h6>
+        <p>
+          <a href="https://drive.google.com/drive/folders/1LOkGjXmYFgkzy8HAh899I4Ho5CNUmu1n" target="_blank" class="link-success text-decoration-none">
+            Access Professional Exams
+          </a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <!-- Footer -->
 <footer class="text-center py-3 text-white" style="background-color: rgba(34,81,45,255);">
   <p>&copy; 2025 Student Association. All rights reserved.</p>
+  <small>Website developed by <a href="https://www.linkedin.com/in/yourlinkedin/" class="text-white fw-bold" target="_blank">Joshua</a></small></p>
+
       <div class="d-flex justify-content-center gap-3">
   <a href="https://web.facebook.com/profile.php?id=61561918256194"><i class="bi bi-facebook text-white"></i></a>
   <a href="https://x.com/NimelssaR17193"><i class="bi bi-twitter text-white"></i></a>
@@ -564,6 +620,7 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script>
+
   fetch("images.json")
     .then(res => res.json())
     .then(files => {
@@ -580,6 +637,21 @@
     })
     .catch(err => console.error("Error loading images:", err));
 </script> -->
+
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<!-- ✅ Import your Firebase config -->
+<script src="firebase-init.js"></script>
+
+<!-- Then your own code that reads Firestore -->
+<script>
+  const db = firebase.firestore();
+  // ... your renderEvents() function here
+</script>
+
 <script>
   fetch("images.json")
     .then(res => res.json())
